@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anything Studio</title>
+  <style>
+    :root { --ink: #17202a; --cream: #fff8ed; --coral: #ff6b5f; --mint: #b7eadb; }
+    * { box-sizing: border-box; margin: 0; }
+    body { min-height: 100vh; font-family: Georgia, serif; color: var(--ink); background: var(--cream); }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 24px 7%; }
+    .mark { font-size: 1.3rem; font-weight: bold; letter-spacing: 1px; }
+    nav a { color: var(--ink); margin-left: 24px; text-decoration: none; font: 0.9rem Arial, sans-serif; }
+    main { min-height: 78vh; display: grid; place-items: center; padding: 40px 7%; }
+    .hero { width: min(980px, 100%); display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+    .eyebrow { color: var(--coral); font: bold 0.8rem Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+    h1 { margin: 18px 0; font-size: clamp(3.2rem, 8vw, 7rem); line-height: .9; }
+    h1 span { color: var(--coral); }
+    .intro { max-width: 430px; font: 1.1rem/1.7 Arial, sans-serif; }
+    button { margin-top: 30px; border: 0; border-radius: 30px; padding: 15px 24px; background: var(--ink); color: white; cursor: pointer; font-weight: bold; }
+    button:hover { background: var(--coral); }
+    .orb { aspect-ratio: 1; border-radius: 48% 52% 58% 42%; background: var(--mint); display: grid; place-items: center; transform: rotate(-8deg); }
+    .orb::after { content: '✦'; color: var(--coral); font-size: 8rem; transform: rotate(8deg); }
+    footer { padding: 20px 7%; display: flex; justify-content: space-between; font: .8rem Arial, sans-serif; border-top: 1px solid #ddd2c5; }
+    @media (max-width: 700px) { .hero { grid-template-columns: 1fr; gap: 35px; } }
+    @media (max-width: 700px) { .orb { width: 65%; justify-self: center; } }
+  </style>
+</head>
+<body>
+  <header><div class="mark">ANYTHING.</div><nav><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+  <main id="about"><section class="hero"><div><div class="eyebrow">Ideas welcome</div><h1>Make room for <span>anything.</span></h1><p class="intro">A tiny corner for bold thoughts, curious experiments, and the next thing you have not imagined yet.</p><button id="spark">Find a spark</button></div><div class="orb" aria-label="Decorative star"></div></section></main>
+  <footer id="contact"><span>Built for possibility.</span><span>hello@anything.example</span></footer>
+  <script>
+    const button = document.querySelector('#spark');
+    button.addEventListener('click', () => {
+      button.textContent = 'Keep imagining';
+      document.querySelector('h1').style.color = '#ff6b5f';
+    });
+  </script>
+</body>
+</html>
